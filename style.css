@@ -61,7 +61,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene-2.is-delivering .handcart{opacity:1;transform:translateX(350px)}
 .scene-3 .moored-reflection{left:230px;top:787px;width:790px;opacity:.27}
 .scene-3 .main-ship{left:230px;top:387px;width:790px}
-.scene-3 .pier-cover{position:absolute;inset:0;background:url("assets/backgrounds/scene-03.png") center/1920px 1080px no-repeat;clip-path:polygon(33% 56%,72% 47%,79% 59%,42% 76%,34% 72%);pointer-events:none}
+.scene-3 .pier-cover{position:absolute;inset:0;background:url("scene-03.png") center/1920px 1080px no-repeat;clip-path:polygon(33% 56%,72% 47%,79% 59%,42% 76%,34% 72%);pointer-events:none}
 .scene-3 .gangplank{left:915px;top:574px;width:315px;transform:rotate(8deg);opacity:1}
 .scene-3 .rope{left:860px;top:650px;width:220px;transform:rotate(17deg);opacity:.86}
 .scene-3 .loader-a,.scene-3 .loader-b{left:1440px;top:765px;width:148px;opacity:0;--travel:6s}
@@ -131,7 +131,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .source-list{display:flex;flex-direction:column;gap:7px;margin-top:18px}
 .source-list a{font-size:12px;color:#2a6470;text-decoration:underline;text-underline-offset:3px;line-height:1.5}
 .source-list a:hover{color:#9c6d35}
-.intro{position:fixed;z-index:20;inset:76px 0 0;background:linear-gradient(90deg,rgba(13,43,49,.9),rgba(15,45,51,.72) 52%,rgba(15,44,51,.45)),url("assets/backgrounds/scene-01.png") center/cover;color:#f8ecd5;display:grid;place-items:center;transition:opacity .6s,visibility .6s}
+.intro{position:fixed;z-index:20;inset:76px 0 0;background:linear-gradient(90deg,rgba(13,43,49,.9),rgba(15,45,51,.72) 52%,rgba(15,44,51,.45)),url("scene-01.png") center/cover;color:#f8ecd5;display:grid;place-items:center;transition:opacity .6s,visibility .6s}
 .intro.closed{opacity:0;visibility:hidden;pointer-events:none}
 .intro-inner{width:min(620px,calc(100% - 48px));margin-right:auto;margin-left:clamp(24px,10vw,220px)}
 .intro-seal{display:inline-block;border:1px solid #cbac7a;color:#e6c896;padding:7px 11px;font-size:13px;letter-spacing:.32em}
@@ -159,7 +159,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
   .action-group{text-align:left;min-width:0;margin-top:22px}.action-row{justify-content:flex-start}.button{min-height:42px;padding:8px 12px;font-size:12px}.button.primary{min-width:114px}
   .replay-button{margin-top:12px}
   .modal-backdrop{align-items:flex-end;padding:0}.knowledge-panel{height:min(80svh,760px);width:100%;border-radius:18px 18px 0 0;animation:mobile-panel .3s ease both}.knowledge-art{height:150px}.knowledge-body{padding:20px 23px 30px}
-  .intro{inset:64px 0 0;background:linear-gradient(0deg,rgba(13,43,49,.94),rgba(13,43,49,.68)),url("assets/backgrounds/scene-01.png") center/cover}.intro-inner{margin:0 auto;width:calc(100% - 48px)}.intro h2{font-size:58px}.intro-description{font-size:14px}
+  .intro{inset:64px 0 0;background:linear-gradient(0deg,rgba(13,43,49,.94),rgba(13,43,49,.68)),url("scene-01.png") center/cover}.intro-inner{margin:0 auto;width:calc(100% - 48px)}.intro h2{font-size:58px}.intro-description{font-size:14px}
 }
 @media(max-height:680px) and (min-width:761px){.control-area{bottom:13px;min-height:140px;padding:15px 22px}.chapter-copy h1{font-size:30px}.chapter-copy p{font-size:12px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

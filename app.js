@@ -1,6 +1,6 @@
 "use strict";
 
-const ASSET = "assets/";
+const ASSET = "";
 const SOURCES = {
   river: { label: "浙江省交通运输厅｜温州—丽水海河联运启航（2024）", url: "https://jtyst.zj.gov.cn/art/2024/12/27/art_1229304975_59039943.html" },
   port: { label: "浙江新闻｜朔门古港遗址考古发现（2023）", url: "https://zjnews.zjol.com.cn/202303/t20230328_25571788.shtml" },
@@ -75,30 +75,30 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 function sprite(file, className) { return `<img class="sprite ${className}" src="${ASSET}${file}" alt="" draggable="false">`; }
 function partMarkup(index) {
   if (index === 0) return [
-    sprite("sprites/mist.png", "mist"), sprite("sprites/wake.png", "wake"),
-    sprite("sprites/small-reflection.png", "reflection small-reflection"), sprite("ships/small-cargo.png", "small-ship")
+    sprite("mist.png", "mist"), sprite("wake.png", "wake"),
+    sprite("small-reflection.png", "reflection small-reflection"), sprite("small-cargo.png", "small-ship")
   ].join("");
   if (index === 1) return [
-    sprite("sprites/wake.png", "wake"), sprite("sprites/small-reflection.png", "reflection small-reflection"),
-    sprite("ships/small-cargo.png", "small-ship"), sprite("sprites/receiver-empty.png", "receiver"),
-    sprite("sprites/basket.png", "basket"), sprite("sprites/receiver-loaded.png", "loaded-receiver"),
-    sprite("sprites/porter.png", "porter"), sprite("sprites/handcart.png", "handcart")
+    sprite("wake.png", "wake"), sprite("small-reflection.png", "reflection small-reflection"),
+    sprite("small-cargo.png", "small-ship"), sprite("receiver-empty.png", "receiver"),
+    sprite("basket.png", "basket"), sprite("receiver-loaded.png", "loaded-receiver"),
+    sprite("porter.png", "porter"), sprite("handcart.png", "handcart")
   ].join("");
   if (index === 2) return [
-    sprite("sprites/moored-reflection.png", "reflection moored-reflection"), sprite("ships/main-moored.png", "main-ship"),
+    sprite("moored-reflection.png", "reflection moored-reflection"), sprite("main-moored.png", "main-ship"),
     '<div class="pier-cover" aria-hidden="true"></div>',
-    sprite("sprites/rope.png", "rope"), sprite("sprites/gangplank.png", "gangplank"),
-    sprite("sprites/loader-a.png", "loader-a"), sprite("sprites/loader-b.png", "loader-b")
+    sprite("rope.png", "rope"), sprite("gangplank.png", "gangplank"),
+    sprite("loader-a.png", "loader-a"), sprite("loader-b.png", "loader-b")
   ].join("");
   if (index === 3) return [
-    sprite("sprites/mist.png", "mist"), sprite("sprites/distant-sail.png", "distant-sail"),
-    sprite("sprites/wake.png", "wake"), sprite("sprites/sailing-reflection.png", "reflection sailing-reflection"),
-    sprite("ships/main-sailing.png", "main-ship")
+    sprite("mist.png", "mist"), sprite("distant-sail.png", "distant-sail"),
+    sprite("wake.png", "wake"), sprite("sailing-reflection.png", "reflection sailing-reflection"),
+    sprite("main-sailing.png", "main-ship")
   ].join("");
   return [
-    sprite("sprites/mist.png", "mist"), sprite("sprites/distant-sail.png", "distant-sail"),
-    sprite("sprites/wake.png", "wake"), sprite("sprites/sailing-reflection.png", "reflection sailing-reflection"),
-    sprite("ships/main-away.png", "main-ship"),
+    sprite("mist.png", "mist"), sprite("distant-sail.png", "distant-sail"),
+    sprite("wake.png", "wake"), sprite("sailing-reflection.png", "reflection sailing-reflection"),
+    sprite("main-away.png", "main-ship"),
     `<div class="ending"><strong>一江通海</strong><span>器物随船远行<br>也带去一方生活的印记</span></div>`
   ].join("");
 }
@@ -109,7 +109,7 @@ function buildScenes() {
       `<button type="button" class="hotspot" data-scene="${index}" data-hotspot="${hotspotIndex}" style="left:${hotspot.x}px;top:${hotspot.y}px" aria-label="了解：${hotspot.label}"><span class="hotspot-icon" aria-hidden="true">${hotspot.icon}</span>${hotspot.label}</button>`
     ).join("");
     const box = scene.actionBox;
-    return `<div class="scene scene-${index + 1}${index === 0 ? " active" : ""}" id="scene-${index}" style="background-image:url('${ASSET}backgrounds/scene-0${index + 1}.png')">${partMarkup(index)}${hotspots}<button type="button" class="action-surface" data-primary-scene="${index}" style="left:${box.x}px;top:${box.y}px;width:${box.w}px;height:${box.h}px" aria-label="${scene.action}"></button></div>`;
+    return `<div class="scene scene-${index + 1}${index === 0 ? " active" : ""}" id="scene-${index}" style="background-image:url('${ASSET}scene-0${index + 1}.png')">${partMarkup(index)}${hotspots}<button type="button" class="action-surface" data-primary-scene="${index}" style="left:${box.x}px;top:${box.y}px;width:${box.w}px;height:${box.h}px" aria-label="${scene.action}"></button></div>`;
   }).join("");
   ui.sceneTrack.addEventListener("click", (event) => {
     const hot = event.target.closest("[data-hotspot]");
@@ -178,7 +178,7 @@ function openCard(card) {
   ui.modalTitle.textContent = card.title;
   ui.modalText.textContent = card.text;
   ui.modalNote.textContent = card.note;
-  ui.modalArt.style.backgroundImage = `url('${ASSET}backgrounds/scene-0${state.current + 1}.png')`;
+  ui.modalArt.style.backgroundImage = `url('${ASSET}scene-0${state.current + 1}.png')`;
   ui.modalSources.replaceChildren();
   (card.sources || []).forEach((source) => {
     const a = document.createElement("a");
@@ -300,7 +300,7 @@ class CrossfadeLoop {
     this.players.forEach((player) => { player.pause(); player.currentTime = 0; });
   }
 }
-const ambience = [new CrossfadeLoop(`${ASSET}audio/water.wav`, .12), new CrossfadeLoop(`${ASSET}audio/wind.wav`, .045)];
+const ambience = [new CrossfadeLoop(`${ASSET}water.wav`, .12), new CrossfadeLoop(`${ASSET}wind.wav`, .045)];
 function updateSoundButton() {
   ui.soundLabel.textContent = state.soundOn ? "关闭声音" : "开启声音";
   ui.soundIcon.textContent = state.soundOn ? "♫" : "♪";
@@ -315,7 +315,7 @@ function toggleSound(force) {
 }
 function playCue(file, volume) {
   if (!state.soundOn) return;
-  const cue = new Audio(`${ASSET}audio/${file}`);
+  const cue = new Audio(`${ASSET}${file}`);
   cue.volume = volume; cue.play().catch(() => {});
 }
 
