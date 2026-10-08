@@ -37,14 +37,14 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .mist{opacity:.22;animation:drift 20s ease-in-out infinite alternate}
 .wake{opacity:0;transition:opacity 1.5s ease,transform var(--travel,7s) cubic-bezier(.24,.64,.27,1)}
 .small-ship,.main-ship{filter:drop-shadow(0 7px 5px rgba(32,62,61,.2))}
-.scene-1 .small-reflection{left:405px;top:729px;width:430px}
+.scene-1 .small-reflection{left:405px;top:701px;width:430px}
 .scene-1 .wake{left:235px;top:722px;width:570px}
 .scene-1 .small-ship{left:405px;top:632px;width:430px}
 .scene-1 .mist{left:-80px;top:420px;width:950px}
 .scene-1.is-sailing .small-ship,.scene-1.is-sailing .small-reflection{transform:translateX(420px)}
 .scene-1.is-sailing .wake{opacity:.55;transform:translateX(420px)}
 .scene-2 .small-ship{left:105px;top:600px;width:445px;--travel:5s}
-.scene-2 .small-reflection{left:105px;top:700px;width:445px;--travel:5s}
+.scene-2 .small-reflection{left:105px;top:672px;width:445px;--travel:5s}
 .scene-2 .wake{left:-45px;top:722px;width:500px;--travel:5s}
 .scene-2.docked .small-ship,.scene-2.docked .small-reflection{transform:translateX(420px)}
 .scene-2.docked .wake{opacity:.38;transform:translateX(420px)}
@@ -84,7 +84,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
   100%{transform:translate(-650px,-72px) scaleX(-1)}
 }
 /* The vessel sits beside the pier; no background mask cuts through its masts. */
-.scene-3 .moored-reflection{left:160px;top:625px;width:560px;opacity:.2}
+.scene-3 .moored-reflection{left:160px;top:597px;width:560px;opacity:.2}
 .scene-3 .main-ship{left:160px;top:350px;width:560px}
 .scene-3 .gangplank{left:600px;top:520px;width:220px;transform:scaleX(-1);transform-origin:center;opacity:1}
 .scene-3 .rope{left:670px;top:660px;width:105px;opacity:.8}
@@ -105,7 +105,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 }
 @keyframes step-a{0%,100%{opacity:1}50%{opacity:0}}
 @keyframes step-b{0%,100%{opacity:0}50%{opacity:1}}
-.scene-4 .sailing-reflection{left:440px;top:736px;width:650px;opacity:.27}
+.scene-4 .sailing-reflection{left:440px;top:708px;width:650px;opacity:.27}
 .scene-4 .main-ship{left:440px;top:485px;width:650px;--travel:8s}
 .scene-4 .wake{left:170px;top:808px;width:620px}
 .scene-4 .distant-sail{left:1440px;top:480px;width:210px;opacity:.62;--travel:8s}
@@ -114,7 +114,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene-4.is-sailing .distant-sail{transform:translateX(130px)}
 .scene-4.is-sailing .wake{opacity:.5;transform:translateX(430px)}
 .scene-5 .main-ship{left:470px;top:555px;width:570px;--travel:10s}
-.scene-5 .sailing-reflection{left:470px;top:780px;width:570px;opacity:.22;--travel:10s;transform-origin:center 29%}
+.scene-5 .sailing-reflection{left:470px;top:752px;width:570px;opacity:.22;--travel:10s;transform-origin:center 29%}
 .scene-5 .wake{left:140px;top:837px;width:650px;--travel:10s}
 .scene-5 .distant-sail{left:1420px;top:530px;width:165px;opacity:.47;transition:none}
 .scene-5.is-sailing .distant-sail{animation:sail-to-horizon 16s linear both}
@@ -136,7 +136,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene-count,.scene-caption{position:absolute;color:#f9edda;text-shadow:0 2px 8px rgba(9,31,36,.75);z-index:3;letter-spacing:.14em}
 .scene-count{top:24px;left:34px;font-size:15px}
 .scene-caption{top:28px;right:35px;font-size:12px}
-.control-area{position:relative;z-index:8;bottom:auto;left:auto;right:auto;margin:8px clamp(18px,3vw,52px) 20px;min-height:150px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:22px 28px;background:rgba(246,239,224,.95);border:1px solid rgba(243,224,188,.85);box-shadow:0 16px 44px rgba(11,35,39,.27);backdrop-filter:blur(10px)}
+.control-area{position:relative;z-index:8;bottom:auto;left:auto;right:auto;margin:-64px clamp(18px,3vw,52px) 20px;min-height:150px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:22px 28px;background:rgba(246,239,224,.95);border:1px solid rgba(243,224,188,.85);box-shadow:0 16px 44px rgba(11,35,39,.27);backdrop-filter:blur(10px)}
 .chapter-copy{max-width:600px}
 .chapter-overline{display:flex;align-items:center;gap:12px;color:#6d7f7c;font-size:12px;letter-spacing:.2em}
 .overline-rule{display:block;width:25px;height:1px;background:#bc9a66}
@@ -194,7 +194,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
   .visual-area{position:relative;inset:auto;height:min(56.25vw,42svh);min-height:220px;flex:none}
   .stage-vignette{box-shadow:inset 0 0 30px rgba(5,25,28,.3)}
   .scene-count{top:10px;left:12px;font-size:11px}.scene-caption{top:10px;right:12px;font-size:9px}
-  .control-area{position:relative;inset:auto;display:block;min-height:unset;flex:1;background:var(--paper);border:0;box-shadow:none;backdrop-filter:none;padding:22px 22px 28px}
+  .control-area{position:relative;inset:auto;display:block;margin:-24px 0 0;min-height:unset;flex:1;background:var(--paper);border:0;box-shadow:none;backdrop-filter:none;padding:22px 22px 28px}
   .chapter-copy h1{font-size:31px}.chapter-copy p{font-size:14px}
   .action-group{text-align:left;min-width:0;margin-top:22px}.action-row{justify-content:flex-start}.button{min-height:42px;padding:8px 12px;font-size:12px}.button.primary{min-width:114px}
   .replay-button{margin-top:12px}
