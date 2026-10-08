@@ -35,19 +35,19 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene.instant .sprite,.scene.instant .ending{transition:none!important}
 .reflection{mix-blend-mode:multiply;opacity:.3}
 .mist{opacity:.22;animation:drift 20s ease-in-out infinite alternate}
-.wake{opacity:0;transition:opacity 1.5s ease,transform 7s linear}
+.wake{opacity:0;transition:opacity 1.5s ease,transform var(--travel,7s) cubic-bezier(.24,.64,.27,1)}
 .small-ship,.main-ship{filter:drop-shadow(0 7px 5px rgba(32,62,61,.2))}
 .scene-1 .small-reflection{left:405px;top:729px;width:430px}
 .scene-1 .wake{left:235px;top:722px;width:570px}
 .scene-1 .small-ship{left:405px;top:632px;width:430px}
 .scene-1 .mist{left:-80px;top:420px;width:950px}
 .scene-1.is-sailing .small-ship,.scene-1.is-sailing .small-reflection{transform:translateX(420px)}
-.scene-1.is-sailing .wake{opacity:.55;transform:translateX(280px)}
+.scene-1.is-sailing .wake{opacity:.55;transform:translateX(420px)}
 .scene-2 .small-ship{left:105px;top:600px;width:445px;--travel:5s}
 .scene-2 .small-reflection{left:105px;top:700px;width:445px;--travel:5s}
-.scene-2 .wake{left:-45px;top:765px;width:500px}
+.scene-2 .wake{left:-45px;top:722px;width:500px;--travel:5s}
 .scene-2.docked .small-ship,.scene-2.docked .small-reflection{transform:translateX(420px)}
-.scene-2.docked .wake{opacity:.28;transform:translateX(310px)}
+.scene-2.docked .wake{opacity:.38;transform:translateX(420px)}
 /* Feet and routes are measured against the 1920 × 1080 paintings. */
 .scene-2 .receiver,.scene-2 .loaded-receiver{left:1140px;top:520px;width:auto;height:108px;opacity:0;transition:none}
 .scene-2 .basket{opacity:0;transition:none}
@@ -136,7 +136,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene-count,.scene-caption{position:absolute;color:#f9edda;text-shadow:0 2px 8px rgba(9,31,36,.75);z-index:3;letter-spacing:.14em}
 .scene-count{top:24px;left:34px;font-size:15px}
 .scene-caption{top:28px;right:35px;font-size:12px}
-.control-area{position:relative;z-index:8;bottom:auto;left:auto;right:auto;margin:16px clamp(18px,3vw,52px) 28px;min-height:150px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:22px 28px;background:rgba(246,239,224,.95);border:1px solid rgba(243,224,188,.85);box-shadow:0 16px 44px rgba(11,35,39,.27);backdrop-filter:blur(10px)}
+.control-area{position:relative;z-index:8;bottom:auto;left:auto;right:auto;margin:8px clamp(18px,3vw,52px) 20px;min-height:150px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:22px 28px;background:rgba(246,239,224,.95);border:1px solid rgba(243,224,188,.85);box-shadow:0 16px 44px rgba(11,35,39,.27);backdrop-filter:blur(10px)}
 .chapter-copy{max-width:600px}
 .chapter-overline{display:flex;align-items:center;gap:12px;color:#6d7f7c;font-size:12px;letter-spacing:.2em}
 .overline-rule{display:block;width:25px;height:1px;background:#bc9a66}
