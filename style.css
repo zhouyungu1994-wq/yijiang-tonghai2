@@ -140,6 +140,14 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene-5.finished .ending-summary{animation:ending-rise 1s 1.45s both}
 .scene-5.finished .ending-next{animation:ending-rise 1s 2.2s both}
 @keyframes ending-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.ending-content::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(112deg,transparent 28%,rgba(255,255,255,.16) 46%,rgba(210,177,116,.12) 51%,transparent 68%);background-size:220% 100%;animation:ending-paper-glow 12s ease-in-out infinite}
+.ending-next{position:relative}
+.ending-next::before{content:"";position:absolute;left:0;top:-1px;width:clamp(48px,9%,96px);height:2px;background:linear-gradient(90deg,transparent,#bd985f,#f2dfb8,transparent);animation:ending-route-light 5s ease-in-out infinite}
+.scene-5.finished .ending-next h2{animation:ending-title-breathe 5s 3s ease-in-out infinite}
+@keyframes ending-paper-glow{0%,100%{background-position:120% 0}50%{background-position:-20% 0}}
+@keyframes ending-route-light{0%{transform:translateX(0);opacity:.45}50%{transform:translateX(560px);opacity:1}100%{transform:translateX(0);opacity:.45}}
+@keyframes ending-title-breathe{0%,100%{text-shadow:0 0 0 rgba(174,139,86,0)}50%{text-shadow:0 0 14px rgba(174,139,86,.28)}}
+@media(prefers-reduced-motion:reduce){.ending-content::after,.ending-next::before,.scene-5.finished .ending-next h2{animation:none!important}}
 .hotspot{position:absolute;display:flex;align-items:center;gap:9px;border:0;background:rgba(241,232,215,.93);color:#173841;min-height:47px;padding:6px 16px 6px 8px;border-radius:100px;box-shadow:0 5px 22px rgba(15,49,56,.26);font-size:16px;letter-spacing:.07em;z-index:6;white-space:nowrap;transition:transform .2s,background .2s}
 .hotspot:hover{transform:translateY(-4px);background:#fff8ec}
 .hotspot-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#284d54;color:#f7e9cd;font-size:16px;flex:none;box-shadow:0 0 0 5px rgba(255,248,231,.25)}
