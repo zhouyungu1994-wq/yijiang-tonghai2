@@ -51,9 +51,9 @@ button:disabled{cursor:not-allowed;opacity:.48}
 /* Feet and routes are measured against the 1920 × 1080 paintings. */
 .scene-2 .receiver,.scene-2 .loaded-receiver{left:1140px;top:520px;width:auto;height:108px;opacity:0;transition:none}
 .scene-2 .basket{opacity:0;transition:none}
-.scene-2 .cargo-one{left:965px;top:610px;width:54px}
-.scene-2 .cargo-two{left:1025px;top:604px;width:48px}
-.scene-2 .cargo-three{left:1080px;top:597px;width:44px}
+.scene-2 .cargo-one{left:978px;top:610px;width:54px}
+.scene-2 .cargo-two{left:1010px;top:594px;width:54px}
+.scene-2 .cargo-three{left:1042px;top:610px;width:54px}
 .scene-2 .porter{left:1940px;top:622px;width:172px;opacity:1;transform:scaleX(-1);transition:none}
 .scene-2 .porter-two{left:2150px;top:638px;width:172px;opacity:1;transform:scaleX(-1);transition:none}
 .scene-2.docked .cargo-one{animation:first-cargo 10.5s linear both}
@@ -86,7 +86,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 /* The vessel sits beside the pier; no background mask cuts through its masts. */
 .scene-3 .moored-reflection{left:75px;top:760px;width:560px;opacity:.2}
 .scene-3 .main-ship{left:75px;top:450px;width:560px}
-.scene-3 .gangplank{left:590px;top:620px;width:150px;transform:rotate(27deg);opacity:1}
+.scene-3 .gangplank{left:620px;top:630px;width:180px;transform:scaleX(-1);transform-origin:center;opacity:1}
 .scene-3 .rope{left:610px;top:680px;width:90px;opacity:.8}
 .scene-3 .dock-worker{position:absolute;left:1340px;top:563px;width:0;height:0;z-index:3;pointer-events:none}
 .scene-3 .loader-a,.scene-3 .loader-b{left:-60px;bottom:0;top:auto;width:auto;height:108px;transition:none}
