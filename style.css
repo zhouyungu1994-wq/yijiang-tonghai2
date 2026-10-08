@@ -23,7 +23,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .sound-button span:first-child{font-size:19px;line-height:1}
 .sound-label{font-size:12px}
 .experience{height:auto;min-height:0;position:relative;display:flex;flex-direction:column;overflow:visible}
-.visual-area{position:relative;inset:auto;width:100%;height:min(56.25vw,calc(100svh - 290px));min-height:320px;flex:none;background:radial-gradient(circle at 50% 30%,#9caeaa,#1e4650 80%);overflow:hidden}
+.visual-area{position:relative;inset:auto;width:100%;height:min(56.25vw,1080px);min-height:320px;flex:none;background:radial-gradient(circle at 50% 30%,#9caeaa,#1e4650 80%);overflow:hidden}
 .stage-viewport{position:absolute;width:1920px;height:1080px;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--scale));transform-origin:center center;overflow:hidden;box-shadow:0 28px 70px rgba(3,19,23,.3)}
 .scene-track{display:flex;width:9600px;height:1080px;will-change:transform;transition:transform 1200ms cubic-bezier(.66,.04,.27,1)}
 .scene-track.no-transition{transition:none}
