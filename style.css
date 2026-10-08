@@ -48,28 +48,57 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene-2 .wake{left:-45px;top:765px;width:500px}
 .scene-2.docked .small-ship,.scene-2.docked .small-reflection{transform:translateX(420px)}
 .scene-2.docked .wake{opacity:.28;transform:translateX(310px)}
-.scene-2 .receiver{left:1010px;top:610px;width:155px;opacity:0}
-.scene-2 .loaded-receiver{left:1010px;top:610px;width:155px;opacity:0}
-.scene-2 .basket{left:750px;top:690px;width:88px;opacity:0;--travel:3s}
-.scene-2 .porter{left:1120px;top:620px;width:170px;opacity:0;--travel:5s}
-.scene-2 .handcart{left:1145px;top:620px;width:245px;opacity:0;--travel:5s}
-.scene-2.docked .receiver{opacity:1}
-.scene-2.is-delivering .basket{opacity:1;transform:translate(280px,-22px)}
-.scene-2.delivered .basket,.scene-2.delivered .receiver{opacity:0}
-.scene-2.delivered .loaded-receiver{opacity:1}
-.scene-2.is-delivering .porter{opacity:1;transform:translateX(300px)}
-.scene-2.is-delivering .handcart{opacity:1;transform:translateX(350px)}
-.scene-3 .moored-reflection{left:230px;top:787px;width:790px;opacity:.27}
-.scene-3 .main-ship{left:230px;top:387px;width:790px}
-.scene-3 .pier-cover{position:absolute;inset:0;background:url("scene-03.png") center/1920px 1080px no-repeat;clip-path:polygon(33% 56%,72% 47%,79% 59%,42% 76%,34% 72%);pointer-events:none}
-.scene-3 .gangplank{left:915px;top:574px;width:315px;transform:rotate(8deg);opacity:1}
-.scene-3 .rope{left:860px;top:650px;width:220px;transform:rotate(17deg);opacity:.86}
-.scene-3 .loader-a,.scene-3 .loader-b{left:1440px;top:765px;width:148px;opacity:0;--travel:6s}
-.scene-3 .loader-a{opacity:1}
-.scene-3.is-loading .loader-a{transform:translate(-400px,-130px);opacity:0}
-.scene-3.is-loading .loader-b{transform:translate(-400px,-130px);opacity:1}
-.scene-3.loaded .loader-a,.scene-3.loaded .loader-b{opacity:0}
-.scene-3.loaded .gangplank,.scene-3.loaded .rope{opacity:0;transform:translateY(38px) rotate(8deg)}
+/* Feet and routes are measured against the 1920 × 1080 paintings. */
+.scene-2 .receiver,.scene-2 .loaded-receiver{left:1140px;top:520px;width:auto;height:108px;opacity:0;transition:none}
+.scene-2 .basket{left:965px;top:601px;width:54px;opacity:0;transition:none}
+.scene-2 .porter{left:1940px;top:622px;width:172px;opacity:1;transform:scaleX(-1);transition:none}
+.scene-2 .porter-two{left:2150px;top:638px;width:172px;opacity:1;transform:scaleX(-1);transition:none}
+.scene-2.docked .receiver{animation:receiver-fetch 3.5s 5s linear both}
+.scene-2.docked .loaded-receiver{animation:receiver-pickup .3s 8.2s linear both}
+.scene-2.docked .basket{animation:basket-pickup .7s 7.8s linear both}
+.scene-2.is-delivering .loaded-receiver{animation:receiver-return 4.5s linear both}
+.scene-2.is-delivering .porter{animation:porter-enter 7s linear both}
+.scene-2.is-delivering .porter-two{animation:porter-enter 7s 1s linear both}
+@keyframes receiver-fetch{
+  0%{opacity:0;transform:translate(0,0)}
+  8%{opacity:1;transform:translate(-12px,10px)}
+  75%,90%{opacity:1;transform:translate(-210px,18px)}
+  100%{opacity:0;transform:translate(-210px,18px)}
+}
+@keyframes receiver-pickup{from{opacity:0;transform:translate(-210px,18px)}to{opacity:1;transform:translate(-210px,18px)}}
+@keyframes basket-pickup{0%,65%{opacity:1}100%{opacity:0}}
+@keyframes receiver-return{
+  0%{opacity:1;transform:translate(-210px,18px) scaleX(-1)}
+  85%{opacity:1;transform:translate(-12px,10px) scaleX(-1)}
+  100%{opacity:0;transform:translate(0,0) scaleX(-1)}
+}
+@keyframes porter-enter{
+  0%{transform:translate(0,0) scaleX(-1)}
+  45%{transform:translate(-300px,-26px) scaleX(-1)}
+  100%{transform:translate(-650px,-72px) scaleX(-1)}
+}
+/* The vessel sits beside the pier; no background mask cuts through its masts. */
+.scene-3 .moored-reflection{left:225px;top:780px;width:650px;opacity:.2}
+.scene-3 .main-ship{left:225px;top:440px;width:650px}
+.scene-3 .gangplank{left:790px;top:621px;width:130px;opacity:1}
+.scene-3 .rope{left:795px;top:676px;width:110px;opacity:.8}
+.scene-3 .dock-worker{position:absolute;left:1340px;top:563px;width:0;height:0;z-index:3;pointer-events:none}
+.scene-3 .loader-a,.scene-3 .loader-b{left:-60px;bottom:0;top:auto;width:auto;height:108px;transition:none}
+.scene-3 .loader-b{opacity:0}
+.scene-3.is-loading .dock-worker{animation:dock-walk 6s linear both}
+.scene-3.is-loading .loader-a{animation:step-a .7s steps(1,end) infinite}
+.scene-3.is-loading .loader-b{animation:step-b .7s steps(1,end) infinite}
+.scene-3.loaded .dock-worker{visibility:hidden}
+@keyframes dock-walk{
+  0%{transform:translate(0,0);opacity:1}
+  35%{transform:translate(-180px,31px);opacity:1}
+  68%{transform:translate(-350px,69px);opacity:1}
+  86%{transform:translate(-435px,87px);opacity:1}
+  95%{transform:translate(-510px,115px);opacity:1}
+  100%{transform:translate(-515px,115px);opacity:0}
+}
+@keyframes step-a{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes step-b{0%,100%{opacity:0}50%{opacity:1}}
 .scene-4 .sailing-reflection{left:440px;top:845px;width:650px;opacity:.27}
 .scene-4 .main-ship{left:440px;top:485px;width:650px;--travel:8s}
 .scene-4 .wake{left:170px;top:815px;width:620px}
@@ -81,7 +110,9 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene-5 .main-ship{left:470px;top:555px;width:570px;--travel:10s}
 .scene-5 .sailing-reflection{left:470px;top:875px;width:570px;opacity:.22;--travel:10s}
 .scene-5 .wake{left:140px;top:835px;width:650px;--travel:10s}
-.scene-5 .distant-sail{left:1420px;top:530px;width:165px;opacity:.47}
+.scene-5 .distant-sail{left:1420px;top:530px;width:165px;opacity:.47;transition:none}
+.scene-5.is-sailing .distant-sail{animation:sail-to-horizon 16s linear both}
+@keyframes sail-to-horizon{0%{transform:translate(0,0) scale(1);opacity:.47}55%{transform:translate(125px,-90px) scale(.58);opacity:.3}85%{transform:translate(205px,-145px) scale(.3);opacity:.12}100%{transform:translate(245px,-175px) scale(.16);opacity:0}}
 .scene-5 .mist{left:450px;top:345px;width:1100px;opacity:.14}
 .scene-5.is-sailing .main-ship{transform:translate(610px,-145px) scale(.55)}
 .scene-5.is-sailing .sailing-reflection{transform:translate(610px,-145px) scale(.55);opacity:.08}
@@ -162,5 +193,5 @@ button:disabled{cursor:not-allowed;opacity:.48}
   .intro{inset:64px 0 0;background:linear-gradient(0deg,rgba(13,43,49,.94),rgba(13,43,49,.68)),url("scene-01.png") center/cover}.intro-inner{margin:0 auto;width:calc(100% - 48px)}.intro h2{font-size:58px}.intro-description{font-size:14px}
 }
 @media(max-height:680px) and (min-width:761px){.control-area{bottom:13px;min-height:140px;padding:15px 22px}.chapter-copy h1{font-size:30px}.chapter-copy p{font-size:12px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 @keyframes mobile-panel{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}

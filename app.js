@@ -82,13 +82,12 @@ function partMarkup(index) {
     sprite("wake.png", "wake"), sprite("small-reflection.png", "reflection small-reflection"),
     sprite("small-cargo.png", "small-ship"), sprite("receiver-empty.png", "receiver"),
     sprite("basket.png", "basket"), sprite("receiver-loaded.png", "loaded-receiver"),
-    sprite("porter.png", "porter"), sprite("handcart.png", "handcart")
+    sprite("porter.png", "porter"), sprite("porter.png", "porter porter-two")
   ].join("");
   if (index === 2) return [
     sprite("moored-reflection.png", "reflection moored-reflection"), sprite("main-moored.png", "main-ship"),
-    '<div class="pier-cover" aria-hidden="true"></div>',
     sprite("rope.png", "rope"), sprite("gangplank.png", "gangplank"),
-    sprite("loader-a.png", "loader-a"), sprite("loader-b.png", "loader-b")
+    '<div class="dock-worker" aria-hidden="true">' + sprite("loader-a.png", "loader-a") + sprite("loader-b.png", "loader-b") + '</div>'
   ].join("");
   if (index === 3) return [
     sprite("mist.png", "mist"), sprite("distant-sail.png", "distant-sail"),
@@ -211,6 +210,10 @@ function runMotion(className, duration, onFinish) {
     settled = true;
     clearTimeout(state.timer);
     if (skip) {
+      // Set finite animations to their final frame when skipping.
+      element.getAnimations({ subtree: true }).forEach((animation) => {
+        if (Number.isFinite(animation.effect.getComputedTiming().endTime)) animation.finish();
+      });
       element.classList.add("instant");
       requestAnimationFrame(() => requestAnimationFrame(() => element.classList.remove("instant")));
     }
@@ -230,9 +233,9 @@ function performAction() {
     runMotion("is-sailing", 7000, completeCurrent);
   } else if (index === 1) {
     if (state.phase[1] === 0) {
-      runMotion("docked", 5000, () => { state.phase[1] = 1; playCue("wood.wav", .14); });
+      runMotion("docked", 8500, () => { state.phase[1] = 1; playCue("wood.wav", .14); });
     } else {
-      runMotion("is-delivering", 5000, () => { sceneEl().classList.add("delivered"); state.phase[1] = 2; completeCurrent(); });
+      runMotion("is-delivering", 8000, () => { sceneEl().classList.add("delivered"); state.phase[1] = 2; completeCurrent(); });
     }
   } else if (index === 2) {
     if (state.phase[2] === 0) { state.phase[2] = 1; openCard(SCENES[2].hotspots[0]); updateUI(); }
@@ -240,7 +243,7 @@ function performAction() {
   } else if (index === 3) {
     runMotion("is-sailing", 8000, completeCurrent);
   } else {
-    runMotion("is-sailing", 10000, completeCurrent);
+    runMotion("is-sailing", 16000, completeCurrent);
   }
 }
 
