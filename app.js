@@ -101,7 +101,18 @@ function partMarkup(index) {
     sprite("mist.png", "mist"), sprite("distant-sail.png", "distant-sail"),
     sprite("wake.png", "wake"), sprite("sailing-reflection.png", "reflection sailing-reflection"),
     sprite("main-away.png", "main-ship"),
-    `<div class="ending"><strong>一江通海</strong><span>器物随船远行<br>也带去一方生活的印记</span></div>`
+    `<div class="ending" aria-live="polite">
+      <div class="ending-content">
+        <span class="ending-kicker">水木之间 · 生生瓯越</span>
+        <strong>一江通海</strong>
+        <p class="ending-summary">从山间水路到朔门古港，瓯江连接内陆、港城与海洋。<br>码头、沉船与陶瓷遗存，留下温州港参与宋元海上交流的见证。</p>
+        <div class="ending-next">
+          <span>下一章</span>
+          <h2>生生瓯越</h2>
+          <p>循着山水与技艺的脉络，继续探寻瓯越文明如何生生不息。</p>
+        </div>
+      </div>
+    </div>`
   ].join("");
 }
 
