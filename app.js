@@ -16,46 +16,46 @@ const SOURCES = {
 const SCENES = [
   {
     title: "循江而来", eyebrow: "第一幕 · 循江而来", lead: "沿着水路，山间的货物开始一程远行。", prompt: "点击启程，沿江向东", action: "启程",
-    card: { title: "瓯江：山水之间的交流通道", text: "瓯江流经浙南，连接丽水、温州并向海延伸。长卷从山水中的小舟讲起，呈现人、货物沿水路汇向江岸、港口的交流想象。浙江省交通运输厅记录的温州—丽水海河联运，则是今天这条水路继续连接内陆与沿海的实例。", note: "古代行旅细节属于画面叙事；现代航线与古代航运分开说明。", sources: [SOURCES.river] },
+    card: { title: "瓯江：山水之间的交流通道", text: "瓯江流经浙南，连接丽水与温州并通向海洋。浙江省交通运输厅将瓯江称为浙南连接山海的航运动脉、对外贸易的重要通道。2024年12月，温州七里港至青田温溪港集装箱海河联运航线启航。", note: "", sources: [SOURCES.river] },
     hotspots: [
-      { x: 470, y: 555, label: "浙南航运", icon: "水", title: "瓯江：连接山地与海岸的水路", text: "瓯江贯穿浙南山地与温州沿海。浙江省交通运输厅将它称为浙南连接山海的航运动脉和对外贸易通道。上游河谷、沿江城镇与河口港口因此处在同一条水路网络中。", note: "这说明水系与区域交通的关系；画中的村落、人物和具体货物是艺术演绎。", sources: [SOURCES.river] },
-      { x: 1430, y: 560, label: "当代航线", icon: "江", title: "七里港—温溪：33海里的联运航线", text: "2024年12月25日，温州七里港至青田温溪港的集装箱海河联运航线启航，航程约33海里，首航装载36个集装箱。这是瓯江水路连接内陆与沿海运输的当代实例。", note: "此处数据为2024年首航信息，不代表古代航线里程或船货。", sources: [SOURCES.river] }
+      { x: 470, y: 555, label: "浙南航运", icon: "水", title: "瓯江：连接山地与海岸的水路", text: "浙江省交通运输厅将瓯江称为浙南连接山海的航运动脉和对外贸易通道。瓯江连接浙南内陆与温州沿海，是区域水上交通的重要组成。", note: "", sources: [SOURCES.river] },
+      { x: 1430, y: 560, label: "当代航线", icon: "江", title: "七里港—温溪：33海里的联运航线", text: "2024年12月25日，温州七里港至青田温溪港的集装箱海河联运航线启航，航程约33海里，首航装载36个集装箱。", note: "", sources: [SOURCES.river] }
     ],
     actionBox: { x: 450, y: 660, w: 420, h: 175 }
   },
   {
     title: "临江入城", eyebrow: "第二幕 · 临江入城", lead: "小舟靠岸，货物沿着江边道路进入街市。", prompt: "让小舟靠岸，再送货入城", action: "靠岸",
-    card: { title: "从江岸入城：港口连接城市生活", text: "朔门古港遗址位于温州古城北侧、瓯江南岸。考古发现的城门、瓮城、江岸与码头遗存，呈现城市和水运空间相邻的线索。第二幕借船靠岸、货物上岸和沿路入城，讲述水上运输如何与陆上街市相接。", note: "挑担者、茶棚和取货过程是帮助理解港城交流的叙事场景，并非遗址复原。", sources: [SOURCES.port, SOURCES.portCity] },
+    card: { title: "从江岸入城：港口连接城市生活", text: "朔门古港遗址位于温州古城北门外、瓯江南岸。考古发现的城门、瓮城、江岸和码头遗存，呈现了宋元至明清时期港区与城市北部的空间关系。南宋绍兴二年（1132），温州设置市舶务管理对外贸易。", note: "", sources: [SOURCES.port, SOURCES.portCity, SOURCES.shippingOffice] },
     hotspots: [
-      { x: 1100, y: 545, label: "朔门古港", icon: "城", title: "宋元港区就在温州古城北侧", text: "朔门古港遗址位于温州古城北门外、瓯江南岸。考古发现了宋元至明清时期的城门、瓮城、江岸和码头等遗迹，显示港区与城防、城市出入口相邻。瓮城是设在城门外的围合防御空间。", note: "遗址信息来自考古成果；插画中的街道布局并非遗址平面复原。", sources: [SOURCES.maritime, SOURCES.port] },
-      { x: 1580, y: 615, label: "市舶管理", icon: "贸", title: "南宋温州设有市舶务", text: "《鹿城区志》记载，南宋绍兴二年（1132）温州设市舶务，管理对外贸易，至庆元元年（1195）废。市舶机构是宋代港口贸易管理制度的一部分，说明港口交流也需要官方管理。", note: "茶棚是画面中的生活场景；本卡介绍的是温州港的制度史，不将茶棚认作历史遗址。", sources: [SOURCES.shippingOffice] }
+      { x: 1100, y: 545, label: "朔门古港", icon: "城", title: "宋元港区就在温州古城北侧", text: "朔门古港遗址位于温州古城北门外、瓯江南岸。考古发现了宋元至明清时期的城门、瓮城、江岸和码头等遗迹。瓮城是设置在城门外的防御设施。", note: "", sources: [SOURCES.maritime, SOURCES.port] },
+      { x: 1580, y: 615, label: "市舶管理", icon: "贸", title: "南宋温州设有市舶务", text: "《鹿城区志》记载，南宋绍兴二年（1132）温州设市舶务，管理对外贸易，至庆元元年（1195）废。", note: "", sources: [SOURCES.shippingOffice] }
     ],
     actionBox: { x: 160, y: 620, w: 460, h: 170 }
   },
   {
     title: "朔门集舟", eyebrow: "第三幕 · 朔门集舟", lead: "清点、装载与离港，古港的线索在江岸汇集。", prompt: "点击货筐，查看装载线索", action: "查看装载",
-    card: { title: "码头与货物：古港交流留下的证据", text: "朔门古港遗址发现宋代码头、两艘宋代沉船和大量瓷器遗存，为认识宋元时期温州港口活动提供了实物线索。第三幕把船、码头、搬运和装载放在一起，呈现货物在港口集散、继续水上旅程的过程。", note: "遗址证明当地港口活动与货物流通；画中的船、货筐和装载细节不对应某次具体贸易。", sources: [SOURCES.port, SOURCES.maritime] },
+    card: { title: "码头与货物：古港交流留下的证据", text: "朔门古港遗址发现宋代码头、宋代沉船和陶瓷遗存。这些考古材料呈现了宋元时期温州港的港口活动，为研究船舶停靠、货物装卸和陶瓷贸易提供实物资料。", note: "", sources: [SOURCES.port, SOURCES.maritime] },
     hotspots: [
-      { x: 1600, y: 690, label: "龙泉青瓷", icon: "瓷", title: "瓷片记录区域产品的流通", text: "朔门古港考古出土的陶瓷遗存中有龙泉窑产品。龙泉窑青瓷是浙南重要的外销陶瓷之一；港址中的瓷器遗存可与窑业生产、运输和港口贸易联系起来研究，但不能据此断定画中某一只货筐装载的货物。", note: "考古遗物证明港址存在相关陶瓷，不等于复原某艘船的完整货单。", sources: [SOURCES.maritime, SOURCES.port] },
-      { x: 1040, y: 555, label: "宋代码头", icon: "港", title: "朔门港区发现成组古码头", text: "2022年公布的朔门古港阶段性考古成果记录了宋代码头、江岸设施及宋代沉船等遗存。成组码头说明港口具有持续装卸和停靠活动；水岸工程与沉船、陶瓷遗存共同构成研究港口运作的证据。", note: "考古成果为分阶段公布；画中的栈桥是示意画法，并非某座遗迹的精确复原。", sources: [SOURCES.maritime] }
+      { x: 1600, y: 690, label: "龙泉青瓷", icon: "瓷", title: "朔门古港出土龙泉窑瓷器", text: "朔门古港考古出土的陶瓷遗存中包括龙泉窑产品。龙泉窑青瓷是宋元时期温州港陶瓷贸易与流通的实物线索。", note: "", sources: [SOURCES.maritime, SOURCES.port] },
+      { x: 1040, y: 555, label: "宋代码头", icon: "港", title: "朔门港区发现成组古码头", text: "朔门古港考古发现宋代码头、江岸设施和宋代沉船等遗存。这些遗迹为研究港口停泊、装卸及沿江交通提供了实物资料。", note: "", sources: [SOURCES.maritime] }
     ],
     actionBox: { x: 590, y: 550, w: 550, h: 280 }
   },
   {
     title: "双塔引航", eyebrow: "第四幕 · 双塔引航", lead: "码头渐远，江心屿双塔在江上显现。", prompt: "扬帆驶向开阔水面", action: "扬帆",
-    card: { title: "江心屿双塔：航行中的方位参照", text: "船离开港口驶向开阔江面，岛屿与塔影成为画面中的远景标记。江心屿位于瓯江之中，官方介绍将双塔与过往船只辨认温州方向联系起来。长卷借双塔讲述航行者如何借助岸上地标辨方向、确认自己与港城的距离。", note: "这里呈现的是地标辨识的文化意象，不表示双塔具备现代导航设备。", sources: [SOURCES.towers, SOURCES.island] },
+    card: { title: "江心屿双塔：瓯江上的历史航标", text: "江心屿位于瓯江之中，东西双塔均为六面七层砖塔。地方年鉴记载，东塔高约28米，西塔高约32米。温州市文旅部门资料记载，过往船只可远望双塔辨认温州方向；双塔于1997年入选“世界百座历史文物灯塔”。", note: "", sources: [SOURCES.towers, SOURCES.island, SOURCES.towerAnnals] },
     hotspots: [
-      { x: 940, y: 175, label: "双塔形制", icon: "塔", title: "东西双塔均为六面七层砖塔", text: "《鹿城区年鉴》记载，江心屿东塔高约28米，西塔高约32米，均为六面七层砖塔。两塔始建年代在地方文献中有不同说法，因此不宜把某一个年份当作定论。", note: "尺寸与形制据地方年鉴；长卷中的塔形为艺术表现。", sources: [SOURCES.towerAnnals, SOURCES.towers] },
-      { x: 830, y: 425, label: "历史灯塔", icon: "航", title: "江心屿双塔入选历史文物灯塔", text: "温州市文旅部门资料记载，江心屿双塔于1997年入选国际航标组织评选的“世界百座历史文物灯塔”。这一称号强调其历史航标价值；它并不表示砖塔曾配备现代灯光导航设备。", note: "称号与年份据温州文旅部门资料。", sources: [SOURCES.towers, SOURCES.island] }
+      { x: 940, y: 175, label: "双塔形制", icon: "塔", title: "东西双塔均为六面七层砖塔", text: "《鹿城区年鉴》记载，江心屿东塔高约28米，西塔高约32米，均为六面七层砖塔。", note: "", sources: [SOURCES.towerAnnals, SOURCES.towers] },
+      { x: 830, y: 425, label: "历史灯塔", icon: "航", title: "江心屿双塔入选历史文物灯塔", text: "温州市文旅部门资料记载，江心屿双塔于1997年入选国际航标组织评选的“世界百座历史文物灯塔”。", note: "", sources: [SOURCES.towers, SOURCES.island] }
     ],
     actionBox: { x: 480, y: 500, w: 650, h: 350 }
   },
   {
     title: "一江通海", eyebrow: "第五幕 · 一江通海", lead: "器物随船远行，也带去一方生活的印记。", prompt: "让船继续向海而行", action: "向海而行",
-    card: { title: "从瓯江港口走向海洋交流", text: "朔门古港的码头、沉船与瓷器遗存，为研究宋元时期温州港口活动提供了实物资料。港口是江河运输通向海上交通的节点，货物与生活经验由此有机会跨地域流动。今天的瓯江海河联运呈现了新的运输联系；古代海上贸易与现代航运各有历史背景。", note: "遗址与航运资料说明港口和水路的联系；长卷中的船只及其目的地属于艺术叙事，不指向某次已考证航程。", sources: [SOURCES.overview, SOURCES.river, SOURCES.port] },
+    card: { title: "从瓯江港口走向海洋交流", text: "朔门古港遗址出土的码头、沉船和陶瓷遗存，为研究宋元时期温州港口活动提供实物资料。国家文物局“考古中国”发布的考古成果将温州港列为宋元海上丝绸之路的重要节点。今天，温州七里港至青田温溪港的海河联运航线继续连接内陆与沿海。", note: "", sources: [SOURCES.overview, SOURCES.river, SOURCES.maritime] },
     hotspots: [
-      { x: 1130, y: 395, label: "海上丝路", icon: "海", title: "考古将温州港与海上丝绸之路相连", text: "国家文物局“考古中国”发布的朔门古港考古成果指出，遗址呈现宋元时期温州港作为重要港口及海上丝绸之路节点的历史。港址中的码头、沉船和贸易陶瓷，为理解港口如何接入更大范围的海上交流提供了实物证据。", note: "这是对考古成果的概述；长卷所画船只不对应已确认的具体航次或目的地。", sources: [SOURCES.maritime, SOURCES.overview] },
-      { x: 1510, y: 700, label: "古今联运", icon: "今", title: "瓯江水路仍连接内陆与沿海", text: "2024年开通的温州七里港—青田温溪港集装箱海河联运航线，全程约33海里，首航装载36个集装箱。它展示了今天利用瓯江水路衔接内河与沿海运输的方式，与宋元海贸属于不同历史阶段。", note: "数据来自2024年首航报道，不与古代航线或货物直接画等号。", sources: [SOURCES.river] }
+      { x: 1130, y: 395, label: "海上丝路", icon: "海", title: "温州港是宋元海上丝绸之路节点", text: "国家文物局“考古中国”发布的朔门古港考古成果将温州港列为宋元海上丝绸之路的重要节点。遗址出土的码头、沉船和陶瓷遗存，为这一港口贸易史提供了实物资料。", note: "", sources: [SOURCES.maritime, SOURCES.overview] },
+      { x: 1510, y: 700, label: "古今联运", icon: "今", title: "瓯江水路连接内陆与沿海", text: "2024年开通的温州七里港—青田温溪港集装箱海河联运航线，全程约33海里，首航装载36个集装箱。", note: "", sources: [SOURCES.river] }
     ],
     actionBox: { x: 490, y: 560, w: 600, h: 330 }
   }
@@ -180,6 +180,7 @@ function openCard(card) {
   ui.modalTitle.textContent = card.title;
   ui.modalText.textContent = card.text;
   ui.modalNote.textContent = card.note;
+  ui.modalNote.hidden = !card.note;
   ui.modalArt.style.backgroundImage = `url('${ASSET}scene-0${state.current + 1}.png')`;
   ui.modalSources.replaceChildren();
   (card.sources || []).forEach((source) => {
@@ -362,4 +363,5 @@ bindUI();
 fitStage();
 updateSoundButton();
 updateUI();
+
 

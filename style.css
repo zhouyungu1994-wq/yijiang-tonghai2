@@ -7,7 +7,7 @@ button{cursor:pointer}
 button:focus-visible,a:focus-visible{outline:3px solid #d8aa63;outline-offset:3px}
 button:disabled{cursor:not-allowed;opacity:.48}
 [hidden]{display:none!important}
-.app{min-height:100svh;overflow:hidden;background:var(--deep)}
+.app{min-height:100svh;overflow:visible;background:var(--deep)}
 .topbar{height:76px;display:flex;align-items:center;gap:24px;padding:0 clamp(18px,3vw,52px);background:#102c34;color:#f5ead7;border-bottom:1px solid rgba(241,232,215,.18);position:relative;z-index:12}
 .brand{display:flex;align-items:center;gap:12px;min-width:228px;white-space:nowrap}
 .brand-mark{width:42px;height:42px;display:grid;place-items:center;border:1px solid #c4a06d;color:#e4c18a;font-size:21px;transform:rotate(-6deg)}
@@ -22,8 +22,8 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .icon-button{background:transparent;border:1px solid rgba(241,232,215,.32);color:#f1e8d7;border-radius:100px;min-height:38px;padding:0 14px;display:flex;align-items:center;gap:8px;white-space:nowrap}
 .sound-button span:first-child{font-size:19px;line-height:1}
 .sound-label{font-size:12px}
-.experience{height:calc(100svh - 76px);min-height:610px;position:relative;overflow:hidden}
-.visual-area{position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,#9caeaa,#1e4650 80%);overflow:hidden}
+.experience{height:auto;min-height:0;position:relative;display:flex;flex-direction:column;overflow:visible}
+.visual-area{position:relative;inset:auto;width:100%;height:min(56.25vw,calc(100svh - 290px));min-height:320px;flex:none;background:radial-gradient(circle at 50% 30%,#9caeaa,#1e4650 80%);overflow:hidden}
 .stage-viewport{position:absolute;width:1920px;height:1080px;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--scale));transform-origin:center center;overflow:hidden;box-shadow:0 28px 70px rgba(3,19,23,.3)}
 .scene-track{display:flex;width:9600px;height:1080px;will-change:transform;transition:transform 1200ms cubic-bezier(.66,.04,.27,1)}
 .scene-track.no-transition{transition:none}
@@ -136,7 +136,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .scene-count,.scene-caption{position:absolute;color:#f9edda;text-shadow:0 2px 8px rgba(9,31,36,.75);z-index:3;letter-spacing:.14em}
 .scene-count{top:24px;left:34px;font-size:15px}
 .scene-caption{top:28px;right:35px;font-size:12px}
-.control-area{position:absolute;z-index:8;bottom:28px;left:clamp(18px,3vw,52px);right:clamp(18px,3vw,52px);min-height:170px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:22px 28px;background:rgba(246,239,224,.95);border:1px solid rgba(243,224,188,.85);box-shadow:0 16px 44px rgba(11,35,39,.27);backdrop-filter:blur(10px)}
+.control-area{position:relative;z-index:8;bottom:auto;left:auto;right:auto;margin:16px clamp(18px,3vw,52px) 28px;min-height:150px;display:flex;align-items:center;justify-content:space-between;gap:32px;padding:22px 28px;background:rgba(246,239,224,.95);border:1px solid rgba(243,224,188,.85);box-shadow:0 16px 44px rgba(11,35,39,.27);backdrop-filter:blur(10px)}
 .chapter-copy{max-width:600px}
 .chapter-overline{display:flex;align-items:center;gap:12px;color:#6d7f7c;font-size:12px;letter-spacing:.2em}
 .overline-rule{display:block;width:25px;height:1px;background:#bc9a66}
@@ -183,7 +183,7 @@ button:disabled{cursor:not-allowed;opacity:.48}
 .intro-footnote{color:#bacbc2;font-size:11px;letter-spacing:.16em;margin-top:18px}
 @keyframes drift{from{transform:translateX(-28px)}to{transform:translateX(35px)}}
 @keyframes panel-in{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:translateX(0)}}
-@media(max-width:1100px){.chapter-nav{gap:0}.chapter-link{min-width:auto;font-size:11px;padding:9px 7px}.brand{min-width:205px}.control-area{bottom:16px;left:16px;right:16px}}
+@media(max-width:1100px){.chapter-nav{gap:0}.chapter-link{min-width:auto;font-size:11px;padding:9px 7px}.brand{min-width:205px}.control-area{margin-left:16px;margin-right:16px}}
 @media(max-width:760px){
   .app{min-height:100svh;overflow:visible;background:var(--paper)}
   .topbar{height:64px;padding:0 13px;gap:8px;flex-wrap:wrap}
