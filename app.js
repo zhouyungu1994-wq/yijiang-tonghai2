@@ -81,7 +81,8 @@ function partMarkup(index) {
   if (index === 1) return [
     sprite("wake.png", "wake"), sprite("small-reflection.png", "reflection small-reflection"),
     sprite("small-cargo.png", "small-ship"), sprite("receiver-empty.png", "receiver"),
-    sprite("basket.png", "basket"), sprite("receiver-loaded.png", "loaded-receiver"),
+    sprite("basket.png", "basket cargo-one"), sprite("basket.png", "basket cargo-two"),
+    sprite("basket.png", "basket cargo-three"), sprite("receiver-loaded.png", "loaded-receiver"),
     sprite("porter.png", "porter"), sprite("porter.png", "porter porter-two")
   ].join("");
   if (index === 2) return [
@@ -233,7 +234,7 @@ function performAction() {
     runMotion("is-sailing", 7000, completeCurrent);
   } else if (index === 1) {
     if (state.phase[1] === 0) {
-      runMotion("docked", 8500, () => { state.phase[1] = 1; playCue("wood.wav", .14); });
+      runMotion("docked", 11100, () => { state.phase[1] = 1; playCue("wood.wav", .14); });
     } else {
       runMotion("is-delivering", 8000, () => { sceneEl().classList.add("delivered"); state.phase[1] = 2; completeCurrent(); });
     }
